@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;EmbeddedTaskFormReactPa.java&apos; to &apos;forms/src/main/java/RandomJavaClass&apos;&#x0D;&#x0A;- Original project: &apos;task-form-embedded-react&apos;&#x0D;&#x0A;- Destination element: &apos;forms/src/main/java/RandomJavaClass&apos;&#x0D;&#x0A;- Original element: &apos;EmbeddedTaskFormReactPa.java&apos;" description="Copy file" destination="=forms/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;RandomJavaClass" element1="src/main/java/org/camunda/bpm/quickstart/react/EmbeddedTaskFormReactPa.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1642271077598" units="0" version="1.0"/>
+</session>

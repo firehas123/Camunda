@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;request-loan.html&apos; to &apos;forms&apos;" description="Move &apos;request-loan.html&apos; to &apos;forms&apos;" destination="src/main/webapp/forms" element1="src/main/webapp/request-loan.html" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1642114925212" updateReferences="true"/>
+</session>

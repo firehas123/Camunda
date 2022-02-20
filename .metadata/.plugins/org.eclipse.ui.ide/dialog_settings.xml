@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Camunda\Camunda-Spring-Boot-Tutorial-Lafayette"/>
+			<item value="D:\Camunda\ExternalFormsTwo"/>
+			<item value="D:\Camunda\forms"/>
+			<item value="D:\Camunda\camunda-vue-app"/>
+			<item value="D:\Camunda\hassan"/>
+			<item value="D:\Camunda\camunda-react-app"/>
+			<item value="D:\Camunda\demo-master"/>
+			<item value="D:\Camunda\loan-approval"/>
+			<item value="D:\Camunda\charge-card-worker"/>
+			<item value="D:\Camunda\testingCamundaSite"/>
+			<item value="D:\Camunda\task-form-embedded-react"/>
+			<item value="C:\Users\mrhas\Desktop\temp\DELETE\Jpa\Jpa"/>
+			<item value="D:\Camunda\eclipselinkEman"/>
+			<item value="D:\Camunda\TaskThree"/>
+			<item value="C:\Users\mrhas\Desktop\temp\example-camunda-case-instance-migration-master\example-camunda-case-instance-migration-master"/>
+			<item value="D:\Camunda\JPATesting"/>
+			<item value="D:\Camunda\ExternalFormsPartT"/>
+			<item value="C:\Users\mrhas\Desktop\Camunda\ExternalFormsPartT"/>
+			<item value="C:\Users\mrhas\Desktop\Camunda\ExternalFormsPartTwo"/>
+			<item value="C:\Users\mrhas\Desktop\Camunda\camunda-get-started-spring-boot-master"/>
+			<item value="C:\Users\mrhas\Desktop\Camunda\ExternalForms"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jpt.jpa.ui.wizard.newJpaProject"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jpt.jpa"/>
+		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Camunda\ExternalFormsPartT"/>
+			<item value="D:\Camunda\demo-master"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,14 @@
+{
+    "telemetry.machineId": "e90688369fb798d13d9de476a73048a59b2380e3905c2b8e2780b8814ac6bbe8",
+    "openedPathsList": {
+        "workspaces3": [
+            {
+                "id": "73a3d85d48eaaaf2cceef6abdf3c9a2e",
+                "configURIPath": "file:///d%3A/Camunda/.metadata/codemix.code-workspace"
+            }
+        ],
+        "files2": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#221a0f"
+}

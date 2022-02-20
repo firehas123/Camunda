@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1dpp8u1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="payment-retrieval" name="Payment Retrieval" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Payment Retrieval Requested">
+      <bpmn:outgoing>Flow_1qrukdw</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="serviceTask1" name="Charge Credit Card" camunda:type="external" camunda:topic="charge-card">
+      <bpmn:incoming>Flow_0abw5gx</bpmn:incoming>
+      <bpmn:incoming>Flow_0i8h48y</bpmn:incoming>
+      <bpmn:outgoing>Flow_0txr89j</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1gai08o" name="Payment Received">
+      <bpmn:incoming>Flow_0txr89j</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0txr89j" sourceRef="serviceTask1" targetRef="Event_1gai08o" />
+    <bpmn:sequenceFlow id="Flow_1qrukdw" sourceRef="StartEvent_1" targetRef="Gateway_1mfzi73" />
+    <bpmn:exclusiveGateway id="Gateway_1mfzi73" name="Payment Amount?">
+      <bpmn:incoming>Flow_1qrukdw</bpmn:incoming>
+      <bpmn:outgoing>Flow_1hnfjnq</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0abw5gx</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1hnfjnq" name="&#62;= 1000 $" sourceRef="Gateway_1mfzi73" targetRef="Activity_1jyflgj">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{amount &gt;= 1000}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0abw5gx" name="&#60; 1000 $" sourceRef="Gateway_1mfzi73" targetRef="serviceTask1">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{ amount &lt; 1000}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="Gateway_13l2zhf" name="Approved?">
+      <bpmn:incoming>Flow_176ui2e</bpmn:incoming>
+      <bpmn:outgoing>Flow_0i8h48y</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0r77ak1</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_176ui2e" sourceRef="Activity_1jyflgj" targetRef="Gateway_13l2zhf" />
+    <bpmn:sequenceFlow id="Flow_0i8h48y" name="Yes" sourceRef="Gateway_13l2zhf" targetRef="serviceTask1">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{ approved }</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:endEvent id="Event_0wwtlgf" name="Payment Retrieval Rejected">
+      <bpmn:incoming>Flow_0r77ak1</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0r77ak1" name="No" sourceRef="Gateway_13l2zhf" targetRef="Event_0wwtlgf">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{ !approved }</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:userTask id="Activity_1jyflgj" name="Approve Payment" camunda:formKey="camunda-forms:deployment:payment.form">
+      <bpmn:incoming>Flow_1hnfjnq</bpmn:incoming>
+      <bpmn:outgoing>Flow_176ui2e</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="payment-retrieval">
+      <bpmndi:BPMNEdge id="Flow_0r77ak1_di" bpmnElement="Flow_0r77ak1">
+        <di:waypoint x="695" y="350" />
+        <di:waypoint x="842" y="350" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="761" y="332" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0i8h48y_di" bpmnElement="Flow_0i8h48y">
+        <di:waypoint x="670" y="325" />
+        <di:waypoint x="670" y="157" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="676" y="238" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_176ui2e_di" bpmnElement="Flow_176ui2e">
+        <di:waypoint x="580" y="350" />
+        <di:waypoint x="645" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0abw5gx_di" bpmnElement="Flow_0abw5gx">
+        <di:waypoint x="325" y="117" />
+        <di:waypoint x="620" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="451" y="99" width="44" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1hnfjnq_di" bpmnElement="Flow_1hnfjnq">
+        <di:waypoint x="300" y="142" />
+        <di:waypoint x="300" y="350" />
+        <di:waypoint x="480" y="350" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="315" y="243" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qrukdw_di" bpmnElement="Flow_1qrukdw">
+        <di:waypoint x="198" y="117" />
+        <di:waypoint x="275" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0txr89j_di" bpmnElement="Flow_0txr89j">
+        <di:waypoint x="720" y="114" />
+        <di:waypoint x="842" y="114" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="162" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="153" y="142" width="54" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ks43pm_di" bpmnElement="serviceTask1">
+        <dc:Bounds x="620" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1gai08o_di" bpmnElement="Event_1gai08o">
+        <dc:Bounds x="842" y="96" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="837" y="139" width="47" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1mfzi73_di" bpmnElement="Gateway_1mfzi73" isMarkerVisible="true">
+        <dc:Bounds x="275" y="92" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="278" y="62" width="45" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_13l2zhf_di" bpmnElement="Gateway_13l2zhf" isMarkerVisible="true">
+        <dc:Bounds x="645" y="325" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="644" y="382" width="53" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0wwtlgf_di" bpmnElement="Event_0wwtlgf">
+        <dc:Bounds x="842" y="332" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="815" y="375" width="90" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14enao7_di" bpmnElement="Activity_1jyflgj">
+        <dc:Bounds x="480" y="310" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

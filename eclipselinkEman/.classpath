@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="jlib/eclipselink-src"/>
+	<classpathentry kind="lib" path="jlib/eclipselink.jar"/>
+	<classpathentry kind="lib" path="jlib/extension/org.eclipse.persistence.extension_2.7.9.v20210604-2c549e2208.jar"/>
+	<classpathentry kind="lib" path="jlib/extension/org.eclipse.persistence.extension.source_2.7.9.v20210604-2c549e2208.jar"/>
+	<classpathentry kind="lib" path="jlib/jpa/jakarta.persistence_2.2.3.jar"/>
+	<classpathentry kind="lib" path="jlib/jpa/jakarta.persistence.source_2.2.3.jar"/>
+	<classpathentry kind="lib" path="jlib/jpa/org.eclipse.persistence.jpa.modelgen_2.7.9.v20210604-2c549e2208.jar"/>
+	<classpathentry kind="lib" path="jlib/jpa/org.eclipse.persistence.jpa.modelgen.source_2.7.9.v20210604-2c549e2208.jar"/>
+	<classpathentry kind="lib" path="jlib/jpa/org.eclipse.persistence.jpars_2.7.9.v20210604-2c549e2208.jar"/>
+	<classpathentry kind="lib" path="jlib/jpa/org.eclipse.persistence.jpars.source_2.7.9.v20210604-2c549e2208.jar"/>
+	<classpathentry kind="lib" path="jlib/moxy/api/jakarta.xml.bind-api.jar"/>
+	<classpathentry kind="lib" path="jlib/moxy/jakarta.activation.jar"/>
+	<classpathentry kind="lib" path="jlib/moxy/jakarta.json.jar"/>
+	<classpathentry kind="lib" path="jlib/moxy/jakarta.mail.jar"/>
+	<classpathentry kind="lib" path="jlib/moxy/jakarta.validation-api.jar"/>
+	<classpathentry kind="lib" path="jlib/moxy/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="jlib/moxy/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="jlib/sdo/commonj.sdo_2.1.1.v201112051852.jar"/>
+	<classpathentry kind="lib" path="utils/dbws/eclipselink-dbwsutils.jar"/>
+	<classpathentry kind="lib" path="utils/dbws/jakarta.servlet-api.jar"/>
+	<classpathentry kind="lib" path="utils/dbws/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="utils/dbws/org.eclipse.persistence.oracleddlparser_1.0.0.v201807030954.jar"/>
+	<classpathentry kind="lib" path="utils/dbws/org.eclipse.persistence.oracleddlparser.source_1.0.0.v201807030954.jar"/>
+	<classpathentry kind="lib" path="utils/rename/package-rename.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

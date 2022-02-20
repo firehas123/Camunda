@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.context.event.EventListener"/>
+    <fullyQualifiedTypeName name="com.hassan.service.CreateEmployee"/>
+</qualifiedTypeNameHistroy>
